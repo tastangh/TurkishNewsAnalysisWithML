@@ -1,0 +1,17 @@
+Model: intfloat_multilingual-e5-large-instruct
+Eğitim Türü: regression
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89       143
+           1       0.91      0.86      0.88       162
+           2       0.88      0.86      0.87       125
+           3       0.91      0.96      0.94       140
+           4       0.97      0.96      0.96       128
+           5       0.98      0.99      0.99       157
+           6       0.90      0.90      0.90       125
+
+    accuracy                           0.92       980
+   macro avg       0.92      0.92      0.92       980
+weighted avg       0.92      0.92      0.92       980
