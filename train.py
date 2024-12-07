@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
-import torch_directml  # GPU/DirectML desteği için
+import torch
 import multiprocessing  # Paralel işlem yönetimi
 import torch
 
@@ -292,12 +292,12 @@ if __name__ == "__main__":
 
     # Kullanılacak embedding modelleri
     model_names = [
-        # "jinaai/jina-embeddings-v3",
-        "sentence-transformers/all-MiniLM-L12-v2",
-        "intfloat/multilingual-e5-large-instruct",
-        "BAAI/bge-m3",
-        "nomic-ai/nomic-embed-text-v1",
-        "dbmdz/bert-base-turkish-cased",
+        "jinaai/jina-embeddings-v3",
+        # "sentence-transformers/all-MiniLM-L12-v2",
+        # "intfloat/multilingual-e5-large-instruct",
+        # "BAAI/bge-m3",
+        # "nomic-ai/nomic-embed-text-v1",
+        # "dbmdz/bert-base-turkish-cased",
     ]
     save_path = "models"  # Modellerin kaydedileceği dizin
     os.makedirs(save_path, exist_ok=True)
@@ -306,13 +306,8 @@ if __name__ == "__main__":
     process_args = []
     for model_name in model_names:
         # CPU veya GPU cihazı ayarla
-        if "jinaai" in model_name or "nomic" in model_name:
-            device = torch.device("cpu")
-            print(f"[INFO] {model_name} için CPU kullanılıyor.")
-        else:
-            device = torch_directml.device()
-            print(f"[INFO] {model_name} için GPU kullanılıyor.")
-
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"[INFO] {model_name} için cihaz kullanılıyor: {device}")
         process_args.append((model_name, X_train, y_train, X_test, y_test, save_path, device))
 
     # Paralel işlem havuzu başlat ve GridSearch ile modelleri eğit

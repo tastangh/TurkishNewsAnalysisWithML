@@ -199,25 +199,25 @@ if __name__ == "__main__":
     import torch
     from dataset import DataProcessor
 
-    device = torch.device("cpu")
+    device = torch.device("cuda")
     print(f"[INFO] Kullanılacak cihaz: {device}")
 
     dataset_name = "savasy/ttc4900"
     embedding_model_names = [
-        # "jinaai/jina-embeddings-v3",
-        "sentence-transformers/all-MiniLM-L12-v2",
-        "intfloat/multilingual-e5-large-instruct",
-        # "BAAI/bge-m3",
-        "nomic-ai/nomic-embed-text-v1",
-        "dbmdz/bert-base-turkish-cased",
+        "jinaai/jina-embeddings-v3",
+        # "sentence-transformers/all-MiniLM-L12-v2",
+        # "intfloat/multilingual-e5-large-instruct",
+        # # "BAAI/bge-m3",
+        # "nomic-ai/nomic-embed-text-v1",
+        # "dbmdz/bert-base-turkish-cased",
     ]
     model_dirs = [
-        # "models/jinaai_jina-embeddings-v3",
-        "models/sentence-transformers_all-MiniLM-L12-v2",
-        "models/intfloat_multilingual-e5-large-instruct",
-        # "models/BAAI_bge-m3",
-        "models/nomic-ai_nomic-embed-text-v1",
-        "models/dbmdz_bert-base-turkish-cased",
+        "models/jinaai_jina-embeddings-v3",
+        # "models/sentence-transformers_all-MiniLM-L12-v2",
+        # "models/intfloat_multilingual-e5-large-instruct",+
+        # # "models/BAAI_bge-m3",
+        # "models/nomic-ai_nomic-embed-text-v1",
+        # "models/dbmdz_bert-base-turkish-cased",
     ]
 
     print("[INFO] Veri seti işleniyor...")

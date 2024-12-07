@@ -1,0 +1,17 @@
+Model: jinaai_jina-embeddings-v3
+Eğitim Türü: svm
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.92      0.91       143
+           1       0.90      0.86      0.88       162
+           2       0.87      0.90      0.89       125
+           3       0.95      0.96      0.96       140
+           4       0.98      0.96      0.97       128
+           5       0.98      0.99      0.99       157
+           6       0.90      0.90      0.90       125
+
+    accuracy                           0.93       980
+   macro avg       0.93      0.93      0.93       980
+weighted avg       0.93      0.93      0.93       980

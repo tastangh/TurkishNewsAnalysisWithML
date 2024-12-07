@@ -1,0 +1,17 @@
+Model: jinaai_jina-embeddings-v3
+Eğitim Türü: forest
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88       143
+           1       0.91      0.75      0.82       162
+           2       0.84      0.79      0.81       125
+           3       0.89      0.96      0.93       140
+           4       0.93      0.97      0.95       128
+           5       0.97      0.96      0.96       157
+           6       0.82      0.89      0.85       125
+
+    accuracy                           0.89       980
+   macro avg       0.89      0.89      0.89       980
+weighted avg       0.89      0.89      0.89       980
